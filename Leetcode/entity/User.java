@@ -1,12 +1,18 @@
-package Leetcode.entities;
+package Leetcode.entity;
 
 import java.util.List;
 
 public class User {
-    private long id;
+    private long id = 0;
     private String userName;
-    private double score;
+    private int score;
     private List<Contest> contests;
+
+    public User(String userName) {
+        this.userName = userName;
+        this.score = 1500;
+        this.id += 1;
+    }
 
     public long getId() {
         return id;
@@ -20,10 +26,10 @@ public class User {
     public void setUserName(String userName) {
         this.userName = userName;
     }
-    public double getScore() {
+    public int getScore() {
         return score;
     }
-    public void setScore(double score) {
+    public void setScore(int score) {
         this.score = score;
     }
     public List<Contest> getContests() {

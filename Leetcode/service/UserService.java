@@ -1,9 +1,9 @@
 package Leetcode.service;
 
-import Leetcode.entities.User;
+import Leetcode.entity.User;
 
 public interface UserService {
-    User createUser(User user);
+    User createUser(String userName);
     User getUser(long id);
-    boolean withdrawContest(long contestId, String userName);
+    boolean attendContest(long contestId, String userName);
 }

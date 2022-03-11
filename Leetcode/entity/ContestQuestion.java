@@ -1,4 +1,4 @@
-package Leetcode.entities;
+package Leetcode.entity;
 
 import java.util.List;
 

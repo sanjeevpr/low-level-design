@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import Leetcode.entities.Contest;
+import Leetcode.entity.Contest;
 
 public class ContestRepository implements BaseRepository<Contest> {
 

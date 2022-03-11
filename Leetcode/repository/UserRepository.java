@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import Leetcode.entities.User;
+import Leetcode.entity.User;
 
 public class UserRepository implements BaseRepository<User> {
 

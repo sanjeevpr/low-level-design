@@ -1,4 +1,4 @@
-package Leetcode.entities;
+package Leetcode.entity;
 
 public class Question {
     private long id;
