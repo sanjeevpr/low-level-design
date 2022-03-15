@@ -3,6 +3,7 @@ package Leetcode.repository;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import Leetcode.entity.User;
 
@@ -18,8 +19,15 @@ public class UserRepository implements BaseRepository<User> {
 
     @Override
     public List<User> findAll() {
-        List<User> users = (List<User>) userRepository.values();
-        return users;
+        return (List<User>) userRepository.values();
+    }
+
+    public Optional<User> findByUserName(String userName) {
+        List<User> users = findAll();
+        return users
+            .stream()
+            .filter(u -> u.getUserName().equals(userName))
+            .findFirst();
     }
 
     @Override

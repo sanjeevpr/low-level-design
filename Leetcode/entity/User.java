@@ -38,4 +38,9 @@ public class User {
     public void setContests(List<Contest> contests) {
         this.contests = contests;
     }
+    public void setContestToAUser(Contest contest) {
+        List<Contest> contests = getContests();
+        contests.add(contest);
+        setContests(contests);
+    }
 }

@@ -3,8 +3,10 @@ package Leetcode.repository;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import Leetcode.entity.Contest;
+import Leetcode.entity.Level;
 
 public class ContestRepository implements BaseRepository<Contest> {
 
@@ -20,6 +22,14 @@ public class ContestRepository implements BaseRepository<Contest> {
     public List<Contest> findAll() {
         List<Contest> contests = (List<Contest>) contestRepository.values();
         return contests;
+    }
+
+    public List<Contest> findByLevel(Level level) {
+        List<Contest> contests = (List<Contest>) contestRepository.values();
+        return contests
+            .stream()
+            .filter(contest -> contest.getLevel().equals(level))
+            .collect(Collectors.toList());
     }
 
     @Override

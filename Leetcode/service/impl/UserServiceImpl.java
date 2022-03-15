@@ -1,15 +1,23 @@
 package Leetcode.service.impl;
 
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+import Leetcode.entity.Contest;
 import Leetcode.entity.User;
+import Leetcode.repository.ContestRepository;
 import Leetcode.repository.UserRepository;
 import Leetcode.service.UserService;
 
 public class UserServiceImpl implements UserService {
 
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
+    private final ContestRepository contestRepository;
 
     public UserServiceImpl() {
         this.userRepository = new UserRepository();
+        this.contestRepository = new ContestRepository();
     }
 
     @Override
@@ -24,9 +32,22 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean attendContest(long contestId, String userName) {
-        // TODO Auto-generated method stub
-        return false;
+    public void attendContest(long contestId, String userName) {
+        Contest contest = contestRepository.findById(contestId);
+        Optional<User> userOptional = userRepository.findByUserName(userName);
+        userOptional.orElseThrow(() -> new IllegalArgumentException("User not found"));
+        User user = userOptional.get();
+        user.setContestToAUser(contest);
+        userRepository.save(user);
+    }
+
+    @Override
+    public List<User> getAllUsersForTheContest(Contest contest) {
+        List<User> allUsers = userRepository.findAll();
+        return allUsers
+            .stream()
+            .filter(u -> u.getContests().contains(contest))
+            .collect(Collectors.toList());
     }
 
 }

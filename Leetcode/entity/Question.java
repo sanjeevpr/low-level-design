@@ -6,6 +6,13 @@ public class Question {
     private Level level;
     private int score;
 
+    public Question(String question, Level level, int score) {
+        this.id += 1;
+        this.question = question;
+        this.level = level;
+        this.score = score;
+    }
+
     public long getId() {
         return id;
     }
