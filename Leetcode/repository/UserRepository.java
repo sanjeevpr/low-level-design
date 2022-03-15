@@ -39,4 +39,9 @@ public class UserRepository implements BaseRepository<User> {
     public void delete(long id) {
        userRepository.remove(id);
     }
+
+    @Override
+    public void saveAll(List<User> users) {
+        users.forEach(user -> save(user));
+    }
 }

@@ -41,5 +41,10 @@ public class ContestRepository implements BaseRepository<Contest> {
     public void delete(long id) {
         contestRepository.remove(id);
     }
+
+    @Override
+    public void saveAll(List<Contest> contests) {
+        contests.forEach(contest -> save(contest));
+    }
     
 }

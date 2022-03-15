@@ -40,5 +40,10 @@ public class QuestionRepository implements BaseRepository<Question> {
     public void delete(long id) {
         questionRepository.remove(id);
     }
+
+    @Override
+    public void saveAll(List<Question> questions) {
+       questions.forEach(question -> save(question));
+    }
     
 }
