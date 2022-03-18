@@ -1,8 +1,10 @@
 package Leetcode.repository;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import Leetcode.entity.Level;
@@ -14,17 +16,17 @@ public class QuestionRepository implements BaseRepository<Question> {
     private Map<Long, Question> questionRepository = new HashMap<>();
 
     @Override
-    public Question findById(long id) {
-        return questionRepository.get(id);
+    public Optional<Question> findById(long id) {
+        return Optional.of(questionRepository.get(id));
     }
 
     @Override
     public List<Question> findAll() {
-        return (List<Question>) questionRepository.values();
+        return new ArrayList<>(questionRepository.values());
     }
 
     public List<Question> findByLevel(Level level) {
-        List<Question> questions = (List<Question>) questionRepository.values();
+        List<Question> questions = new ArrayList<>(questionRepository.values());
         return questions
             .stream()
             .filter(question -> question.getLevel().equals(level))
@@ -42,8 +44,11 @@ public class QuestionRepository implements BaseRepository<Question> {
     }
 
     @Override
-    public void saveAll(List<Question> questions) {
-       questions.forEach(question -> save(question));
+    public List<Question>  saveAll(List<Question> questions) {
+        return questions
+                .stream()
+                .map(question -> save(question))
+                .collect(Collectors.toList());
     }
     
 }

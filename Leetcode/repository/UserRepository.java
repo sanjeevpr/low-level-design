@@ -1,9 +1,11 @@
 package Leetcode.repository;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import Leetcode.entity.User;
 
@@ -13,13 +15,13 @@ public class UserRepository implements BaseRepository<User> {
     private Map<Long, User> userRepository = new HashMap<>();
 
     @Override
-    public User findById(long id) {
-        return userRepository.get(id);
+    public Optional<User> findById(long id) {
+        return Optional.of(userRepository.get(id));
     }
 
     @Override
     public List<User> findAll() {
-        return (List<User>) userRepository.values();
+        return new ArrayList<>(userRepository.values());
     }
 
     public Optional<User> findByUserName(String userName) {
@@ -41,7 +43,10 @@ public class UserRepository implements BaseRepository<User> {
     }
 
     @Override
-    public void saveAll(List<User> users) {
-        users.forEach(user -> save(user));
+    public List<User> saveAll(List<User> users) {
+        return users
+                .stream()
+                .map(user -> save(user))
+                .collect(Collectors.toList());
     }
 }
