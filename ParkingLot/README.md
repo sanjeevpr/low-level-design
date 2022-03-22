@@ -9,3 +9,19 @@ The low-level design implementation of the huge multi-level parking lot based on
 - Hourly rates
 - Payment through cash and Credit card
 - Monitoring system
+
+## Actors
+1. Parking lot system
+2. Entry/Exit Terminals
+    - Entry
+    - Exit
+    - Printers
+    - Payment processors
+3. Parking Spot
+    - Handicapped
+    - Compact
+    - Large
+    - Motorcycle
+4. Ticket
+5. Database
+6. Monitoring system
