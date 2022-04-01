@@ -12,16 +12,21 @@ The low-level design implementation of the huge multi-level parking lot based on
 
 ## Actors
 1. Parking lot system
-2. Entry/Exit Terminals
-    - Entry
-    - Exit
-    - Printers
-    - Payment processors
+2. Terminals
+    - EntryTerminal
+    - ExitTerminal
+    - Printer
+    - PaymentProcessor
+        - CardPaymentProcessor
+        - CashPaymentProcessor
 3. Parking Spot
     - Handicapped
     - Compact
     - Large
     - Motorcycle
-4. Ticket
+4. ParkingTicket
+5. PaymentMethod
+    - Cash
+    - Card
 5. Database
 6. Monitoring system
