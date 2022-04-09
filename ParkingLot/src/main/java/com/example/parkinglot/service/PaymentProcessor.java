@@ -1,8 +1,8 @@
 package com.example.parkinglot.service;
 
-import java.math.BigDecimal;
+import com.example.parkinglot.service.impl.PaymentMethod;
 
-import ParkingLot.domain.impl.PaymentMethod;
+import java.math.BigDecimal;
 
 public interface PaymentProcessor {
     // Processes the payment

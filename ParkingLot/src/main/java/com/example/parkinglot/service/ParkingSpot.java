@@ -1,6 +1,7 @@
-package ParkingLot.domain;
+package com.example.parkinglot.service;
 
-import ParkingLot.domain.impl.ParkingTicket;
+
+import com.example.parkinglot.service.impl.ParkingTicket;
 
 public interface ParkingSpot {
     public ParkingTicket reserve();

@@ -1,6 +1,6 @@
-package ParkingLot.domain.impl;
+package com.example.parkinglot.service.impl;
 
-import ParkingLot.domain.ParkingSpot;
+import com.example.parkinglot.service.ParkingSpot;
 
 public class MotorcycleParkingSpot implements ParkingSpot {
 

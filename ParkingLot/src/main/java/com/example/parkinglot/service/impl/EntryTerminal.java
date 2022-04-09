@@ -1,5 +1,7 @@
 package com.example.parkinglot.service.impl;
 
+import com.example.parkinglot.service.ParkingSpot;
+import com.example.parkinglot.service.Printable;
 import com.example.parkinglot.service.Terminal;
 
 public class EntryTerminal implements Terminal {

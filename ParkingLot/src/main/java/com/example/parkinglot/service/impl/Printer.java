@@ -1,6 +1,6 @@
-package ParkingLot.domain.impl;
+package com.example.parkinglot.service.impl;
 
-import ParkingLot.domain.Printable;
+import com.example.parkinglot.service.Printable;
 
 public class Printer {
     public String print(Printable printable) {

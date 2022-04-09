@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 public class CardPaymentProcessor implements PaymentProcessor {
 
     @Override
-    public String processPayment(BigDecimal cost, ParkingLot.domain.impl.PaymentMethod paymentMethod) {
+    public String processPayment(BigDecimal cost, PaymentMethod paymentMethod) {
         // TODO Auto-generated method stub
         return null;
     }

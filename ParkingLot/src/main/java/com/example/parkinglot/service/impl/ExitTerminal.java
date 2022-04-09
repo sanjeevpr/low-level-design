@@ -1,14 +1,14 @@
 package com.example.parkinglot.service.impl;
 
-import java.math.BigDecimal;
+import com.example.parkinglot.service.PaymentProcessor;
+import com.example.parkinglot.service.Printable;
+import com.example.parkinglot.service.Terminal;
 
-import ParkingLot.domain.PaymentProcessor;
-import ParkingLot.domain.Printable;
-import ParkingLot.domain.Terminal;
+import java.math.BigDecimal;
 
 public class ExitTerminal implements Terminal {
     
-    private ParkingLot.domain.impl.Printer printer;
+    private Printer printer;
     private PaymentProcessor paymentProcessor;
 
     public ExitTerminal(Printer printer, PaymentProcessor paymentProcessor) {
