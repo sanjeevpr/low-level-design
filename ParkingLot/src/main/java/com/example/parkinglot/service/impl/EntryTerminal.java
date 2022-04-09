@@ -1,8 +1,6 @@
-package ParkingLot.domain.impl;
+package com.example.parkinglot.service.impl;
 
-import ParkingLot.domain.ParkingSpot;
-import ParkingLot.domain.Printable;
-import ParkingLot.domain.Terminal;
+import com.example.parkinglot.service.Terminal;
 
 public class EntryTerminal implements Terminal {
 
