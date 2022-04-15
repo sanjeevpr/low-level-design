@@ -7,7 +7,7 @@ import com.example.parkinglot.service.Terminal;
 public class NearestParkingStrategy implements ParkingStrategy {
 
     @Override
-    public void park(Terminal terminal, ParkingSpot parkingSpot) {
+    public void getNearestParkingSpot(Terminal terminal, ParkingSpot parkingSpot) {
 
     }
 }

@@ -2,6 +2,7 @@ package com.example.parkinglot.service.impl;
 
 import com.example.parkinglot.service.ParkingSpot;
 import com.example.parkinglot.service.ParkingStrategy;
+import com.example.parkinglot.service.Terminal;
 
 public class HandicappedParkingSpot implements ParkingSpot {
 
@@ -9,7 +10,7 @@ public class HandicappedParkingSpot implements ParkingSpot {
     private ParkingStrategy parkingStrategy;
 
     @Override
-    public ParkingTicket reserve() {
+    public ParkingTicket reserve(Terminal terminal, ParkingSpot parkingSpot) {
         // TODO Auto-generated method stub
         return null;
     }

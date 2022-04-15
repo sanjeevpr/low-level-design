@@ -6,11 +6,12 @@ import com.example.parkinglot.service.Terminal;
 
 public class EntryTerminal implements Terminal {
 
+    private long id;
     private Printer printer;
 
     public ParkingTicket getTicket(ParkingSpot parkingSpot) {
         // Return parking ticket if spot is available
-        parkingSpot.reserve();
+        parkingSpot.reserve(this, parkingSpot);
         return null;
     }
 
