@@ -23,7 +23,7 @@ public class ExitTerminal implements Terminal {
     }
 
     @Override
-    public String print(Printable printable) {
+    public String printTicket(Printable printable) {
         return printer.print(printable);
     }
 }

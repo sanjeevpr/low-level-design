@@ -10,11 +10,12 @@ public class EntryTerminal implements Terminal {
 
     public ParkingTicket getTicket(ParkingSpot parkingSpot) {
         // Return parking ticket if spot is available
+        parkingSpot.reserve();
         return null;
     }
 
     @Override
-    public String print(Printable printable) {
+    public String printTicket(Printable printable) {
         return printer.print(printable);
     }
     
